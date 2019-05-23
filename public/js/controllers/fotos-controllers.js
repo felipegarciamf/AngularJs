@@ -1,17 +1,20 @@
 angular.module('alurapic').
-		controller('FotosController', function($scope){
-			$scope.fotos = [
-			{
-				titulo: 'leao',
-				url: 'http://www.fundosanimais.com/Minis/leoes.jpg'
-			},
-			{
-				titulo: 'leao 2',
-				url: 'http://www.fundosanimais.com/Minis/leoes.jpg'
-			},
-			{
-				titulo: 'leao 3',
-				url: 'http://www.fundosanimais.com/Minis/leoes.jpg'
-			} 
-			];
+		controller('FotosController', function($scope, $http){
+
+			// scope é retornado para tela
+			$scope.fotos = [];
+
+			// ajax do angular
+			// http cria uma promessa de trazer os dados
+			var promise = $http.get('v1/fotos');
+			// se a promessa for cumprida, então ele retorna os dados para scope
+			promise.then(function(retorno){
+				$scope.fotos = retorno.data;
+			})
+			// caso de error
+			.catch(function(error){
+
+				console.log("erro");
+			});
+
 		});
