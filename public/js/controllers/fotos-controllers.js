@@ -5,6 +5,18 @@ angular.module('alurapic').
 			$scope.fotos = [];
 
 			// ajax do angular
+			// http cria uma promessa de trazer os dados de forma mais simplificada
+			var promise = $http.get('v1/fotos')
+			.success(function(fotos){
+				$scope.fotos = fotos;
+			})
+			.error(function(erro){
+				console.log("erro");
+			});
+
+
+			/*
+			// ajax do angular
 			// http cria uma promessa de trazer os dados
 			var promise = $http.get('v1/fotos');
 			// se a promessa for cumprida, então ele retorna os dados para scope
@@ -16,5 +28,7 @@ angular.module('alurapic').
 
 				console.log("erro");
 			});
+			*/
+
 
 		});
