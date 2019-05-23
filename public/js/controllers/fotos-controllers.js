@@ -12,6 +12,6 @@ angular.module('alurapic').
 			{
 				titulo: 'leao 3',
 				url: 'http://www.fundosanimais.com/Minis/leoes.jpg'
-			}
+			} 
 			];
 		});
