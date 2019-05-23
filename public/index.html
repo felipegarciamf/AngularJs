@@ -11,9 +11,22 @@
         <script type="text/javascript" src="js/controllers/fotos-controllers.js"></script>
     </head>
     <body ng-controller="FotosController">
-        <div class="container">
+         <div class="jumbotron">
             <h1 class="text-center">Alurapic</h1>
-            <img src="{{foto.url}}" title="leoes" alt="{{foto.titulo}}" class="img-responsive center-block">
-        </div> <!-- fim container -->        
-    </body>
+         </div>
+         <div class="panel panel-default" > 
+            <div class="panel-heading">
+                <h3 class="panel-title">{{foto.titulo}}</h3>
+
+            </div class="panel-body">
+                <img src="{{foto.url}}" title="leoes" alt="{{foto.titulo}}" class="img-responsive center-block">
+            <div>
+                
+            </div>
+         </div> <!-- Fim do Panel -->    
+
+       
+  
+
+    </body>.
 </html>
